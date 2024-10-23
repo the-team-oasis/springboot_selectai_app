@@ -10,9 +10,9 @@ spring:
         '[format_sql]': true
     show-sql: true
   datasource:
-    url: jdbc:oracle:thin:@myatp23ai_tp?TNS_ADMIN=/Users/dankim/Documents/03.Code/ai-workspace/springboot_selectai_app/Wallet_MyATP23ai
+    url: jdbc:oracle:thin:@myatp23ai_tp?TNS_ADMIN=/path/to/Wallet
     username: admin
-    password: WelCome123##
+    password: your_password
     driver-class-name: oracle.jdbc.OracleDriver
     type: oracle.ucp.jdbc.PoolDataSource
     oracleucp:

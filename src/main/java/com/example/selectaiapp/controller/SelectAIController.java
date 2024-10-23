@@ -39,10 +39,6 @@ public class SelectAIController {
   @PersistenceContext
   private EntityManager entityManager;
 
-  public SelectAIController(SelectAIRepository selectAIRepository) {
-    this.selectAIRepository = selectAIRepository;
-  }
-
   // Helper functions to Select AI interaction
   private String getNarrate(EntityManager entityManager, String question) {
     String sqlText = "select ai narrate " + question;
