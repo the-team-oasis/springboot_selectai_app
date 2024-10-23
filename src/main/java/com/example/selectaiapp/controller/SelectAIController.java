@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.selectaiapp.model.Movie;
-import com.example.selectaiapp.repository.SelectAIRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -38,8 +36,6 @@ import org.hibernate.Session;
 @RequestMapping("/api/v1")
 public class SelectAIController {
 
-  final SelectAIRepository selectAIRepository;
-
   @PersistenceContext
   private EntityManager entityManager;
 
@@ -47,13 +43,7 @@ public class SelectAIController {
     this.selectAIRepository = selectAIRepository;
   }
 
-  @GetMapping("/movies")
-  public List<Movie> getAllMovies() {
-    return selectAIRepository.findAll();
-  }
-
   // Helper functions to Select AI interaction
-
   private String getNarrate(EntityManager entityManager, String question) {
     String sqlText = "select ai narrate " + question;
     final String[] sqlRet = new String[1];
